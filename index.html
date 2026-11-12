@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIDES — a civilization in progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./dashboard.css">
+<link rel="stylesheet" href="./tides3d.css">
+</head>
+<body>
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="logo-mark"></span>TIDES</div>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn-primary">Get Started <span class="btn-pill-icon">↗</span></a>
+    </div>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <span class="eyebrow">#1 Trusted AI Meeting Agent</span>
+      <h1>Capturing conversations<br>with <em>intelligent</em> automation</h1>
+      <p>TIDES turns every conversation into data-driven decisions with intelligent automation that listens, learns, and responds.</p>
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary">Start free trial <span class="btn-pill-icon">↗</span></a>
+        <a href="#how" class="btn btn-outline">See how it works</a>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hp-col" style="flex:1.3;">
+          <div class="hp-video">
+            <div class="face"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.8 4-5.8 7-5.8s6 2 7 5.8"/></svg></div>
+            <div class="face"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.8 4-5.8 7-5.8s6 2 7 5.8"/></svg></div>
+            <div class="face"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.8 4-5.8 7-5.8s6 2 7 5.8"/></svg></div>
+            <div class="face"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1-3.8 4-5.8 7-5.8s6 2 7 5.8"/></svg></div>
+          </div>
+          <div class="hp-capture">
+            <strong>Real-Time Capture</strong>
+            Every spoken word transcribed instantly, tagged by speaker.
+          </div>
+        </div>
+        <div class="hp-col">
+          <div class="hp-search">
+            <div class="row"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6"/><path d="M20 20l-4.5-4.5"/></svg> Search meetings <span class="hp-tag">Design</span></div>
+            <div class="hp-card">
+              <div class="thumb"></div>
+              <div>
+                <strong style="font-size:13px;">Marketing Sync</strong><br>
+                <small>Feb 28 · 1hr 20min</small>
+              </div>
+            </div>
+          </div>
+          <div class="hp-discuss">
+            <strong>AI highlights the key discussion points</strong>
+            "By segmenting demographics and behavior, we can tailor messaging to the right audience."
+            <div class="hp-avatars" style="margin-top:12px;"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="hp-col" style="flex:1.1;">
+          <div class="hp-recording">
+            <div class="hp-rec-badge">Recording</div>
+            <h4>Project Updates</h4>
+            <small style="color:var(--ink-soft);">Feb 28, 2026</small>
+            <ul style="margin-top:12px;">
+              <li>Customer feedback loop</li>
+              <li>Analyst training session</li>
+              <li>Data security review</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="avatars"><span>M</span><span>A</span><span>R</span><span>K</span></div>
+        <div><strong>2.7K+</strong> <span class="label">teams automating conversations with TIDES</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="t3d" id="tides">
+    <div class="wrap">
+      <div class="t3d-copy">
+        <span class="eyebrow">TIDES</span>
+        <h2>A civilization <em style="font-style:italic; color:var(--purple-700);">in progress</em>, in three dimensions</h2>
+        <p>Move your cursor over the emblem, or drag it on your phone. The stars, the students, the book and the name each float on their own layer of depth.</p>
+        <div class="t3d-hint">Move · Tilt · Drag</div>
+      </div>
+      <div class="t3d-scene" id="t3dScene">
+  <div class="t3d-ring r1"><i></i></div>
+  <div class="t3d-ring r2"><i></i></div>
+  <div class="t3d-tilt" id="t3dTilt">
+    <div class="t3d-stack">
+      <svg class="t3d-layer" style="--z:0px" viewBox="0 0 357 420" aria-label="TIDES logo">
+        <rect x="4" y="4" width="349" height="412" rx="26" fill="#fff" stroke="#2f5fb3" stroke-width="6"/>
+        <rect x="11" y="11" width="335" height="398" rx="20" fill="none" stroke="#d6dbe8" stroke-width="1.5"/>
+        <rect x="11" y="374" width="112" height="6" fill="#1e8a3c"/><rect x="123" y="374" width="112" height="6" fill="#fff"/><rect x="235" y="374" width="111" height="6" fill="#d3222a"/>
+        <text x="178" y="406" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="19" fill="#1b2a49">“a civilization in progress”</text>
+      </svg>
+      <svg class="t3d-layer" style="--z:34px" viewBox="0 0 357 420">
+        <g fill="#1f3d66"><path d="M62 150 Q118 138 178 176 L178 236 Q118 200 62 214Z"/></g>
+        <g fill="#1f3d66"><path d="M295 150 Q239 138 178 176 L178 236 Q239 200 295 214Z"/></g>
+        <g fill="#2b74b8"><path d="M76 166 Q122 156 178 190 L178 240 Q122 208 76 220Z"/><path d="M281 166 Q235 156 178 190 L178 240 Q235 208 281 220Z"/></g>
+        <g fill="#49a6e0"><path d="M90 182 Q126 174 178 204 L178 244 Q126 218 90 228Z"/><path d="M267 182 Q231 174 178 204 L178 244 Q231 218 267 228Z"/></g>
+        <path d="M84 230 Q130 232 178 252 Q226 232 272 230" fill="none" stroke="#a5532b" stroke-width="3"/>
+        <path d="M70 224 Q126 226 178 250" fill="none" stroke="#1f3d66" stroke-width="5"/><path d="M287 224 Q231 226 178 250" fill="none" stroke="#1f3d66" stroke-width="5"/>
+      </svg>
+      <svg class="t3d-layer" style="--z:70px" viewBox="0 0 357 420">
+        <defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7a62a"/><stop offset="1" stop-color="#e8661c"/></linearGradient>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3aa9e6"/><stop offset="1" stop-color="#1d6fb8"/></linearGradient></defs>
+        <path d="M118 70 C112 66 106 74 112 82 C126 100 132 124 144 148 C158 178 196 188 214 168 C222 152 216 132 208 120 C198 134 184 134 174 120 C164 106 152 100 142 84 C136 76 126 72 118 70Z" fill="url(#og)"/>
+        <circle cx="184" cy="100" r="15" fill="url(#og)"/>
+        <path d="M160 88 L186 76 L212 88 L186 100Z" fill="#1f5f9f"/><path d="M204 90 L204 104" stroke="#1f5f9f" stroke-width="2.5"/>
+        <path d="M212 158 C204 176 222 196 240 202 C258 204 268 190 268 172 C268 160 262 152 254 148 C250 158 240 160 232 152 C226 146 222 148 212 158Z" fill="url(#bg)"/>
+        <circle cx="240" cy="144" r="11" fill="url(#bg)"/>
+        <path d="M220 134 L241 124 L262 134 L241 144Z" fill="#1f3d66"/>
+      </svg>
+      <svg class="t3d-layer" style="--z:104px" viewBox="0 0 357 420">
+        <text x="178" y="316" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="76" letter-spacing="4" fill="#29a9e0" stroke="#1c5f9c" stroke-width="2" paint-order="stroke">TIDES</text>
+        <rect x="72" y="326" width="213" height="34" rx="8" fill="#fff" stroke="#8b4a2b" stroke-width="2"/>
+        <g fill="none" stroke="#5a3a2a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M96 334v18M88 338l8 6 8-6M91 350h10"/><path d="M122 334v18M116 338l6 6 6-6M128 336l4 16"/>
+          <path d="M150 334l8 16M158 334l-8 16M150 342h8"/><path d="M180 334v18M174 340l6 -4 6 4M180 344l-6 8"/>
+          <path d="M208 336l10 0M213 336v16M205 344h16"/><path d="M240 334l-10 18M232 340l10 0M236 348l8 4"/>
+          <path d="M266 334v18M260 338l6 4 6-4"/>
+        </g>
+      </svg>
+      <svg class="t3d-layer" style="--z:140px" viewBox="0 0 357 420"><g fill="#29a9e0" stroke="#1c7cc0" stroke-width="1.5" stroke-linejoin="round"><polygon points="52.0,19.0 56.7,31.5 70.1,32.1 59.6,40.5 63.2,53.4 52.0,46.0 40.8,53.4 44.4,40.5 33.9,32.1 47.3,31.5"/><polygon points="115.0,19.0 119.7,31.5 133.1,32.1 122.6,40.5 126.2,53.4 115.0,46.0 103.8,53.4 107.4,40.5 96.9,32.1 110.3,31.5"/><polygon points="178.0,19.0 182.7,31.5 196.1,32.1 185.6,40.5 189.2,53.4 178.0,46.0 166.8,53.4 170.4,40.5 159.9,32.1 173.3,31.5"/><polygon points="241.0,19.0 245.7,31.5 259.1,32.1 248.6,40.5 252.2,53.4 241.0,46.0 229.8,53.4 233.4,40.5 222.9,32.1 236.3,31.5"/><polygon points="304.0,19.0 308.7,31.5 322.1,32.1 311.6,40.5 315.2,53.4 304.0,46.0 292.8,53.4 296.4,40.5 285.9,32.1 299.3,31.5"/></g></svg>
+    </div>
+    <div class="t3d-shadow"></div>
+  </div>
+  <span class="t3d-cube c1"><b></b><b></b><b></b><b></b><b></b><b></b></span>
+  <span class="t3d-cube c2"><b></b><b></b><b></b><b></b><b></b><b></b></span>
+</div>
+    </div>
+  </section>
+
+  <section class="trusted">
+    <div class="wrap">
+      <div class="trusted-copy">
+        <span class="eyebrow">Review</span>
+        <h2>Trusted by <em style="font-style:italic; color:var(--purple-700);">industry leaders</em></h2>
+        <p>Our AI agent solutions are trusted by forward-thinking companies across sectors to streamline operations and accelerate growth.</p>
+      </div>
+      <div class="trusted-art">
+        <svg viewBox="0 0 320 280" width="100%" height="100%">
+          <ellipse cx="170" cy="255" rx="90" ry="14" fill="var(--lav-300)" opacity="0.6"/>
+          <path d="M120 120a50 50 0 0 1 100 0" fill="none" stroke="var(--ink)" stroke-width="4"/>
+          <rect x="112" y="112" width="14" height="26" rx="6" fill="var(--purple-600)"/>
+          <rect x="194" y="112" width="14" height="26" rx="6" fill="var(--purple-600)"/>
+          <circle cx="160" cy="128" r="34" fill="#FBD9B4"/>
+          <path d="M128 118c4-22 60-30 64-4 10 2 6 18 2 12-2 10-8-2-8-2-14 12-46 8-56-2-4 6-6-2-2-4z" fill="var(--ink)"/>
+          <circle cx="148" cy="130" r="2.4" fill="var(--ink)"/>
+          <circle cx="172" cy="130" r="2.4" fill="var(--ink)"/>
+          <path d="M150 140q10 7 20 0" stroke="var(--ink)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <rect x="138" y="122" width="44" height="10" rx="5" fill="none" stroke="var(--purple-700)" stroke-width="2.4"/>
+          <path d="M108 260c2-46 22-78 52-78s50 32 52 78z" fill="var(--purple-600)"/>
+          <path d="M108 260c2-46 22-78 52-78v78z" fill="var(--purple-500)"/>
+          <path d="M112 210c-10 14-14 30-10 46" stroke="var(--purple-700)" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <rect x="78" y="238" width="52" height="38" rx="6" fill="var(--ink)"/>
+          <rect x="83" y="243" width="42" height="28" rx="3" fill="var(--lav-200)"/>
+          <g transform="translate(226,190)">
+            <rect x="0" y="0" width="40" height="52" rx="4" fill="#fff" stroke="var(--line)"/>
+            <line x1="8" y1="12" x2="32" y2="12" stroke="var(--lav-300)" stroke-width="3"/>
+            <line x1="8" y1="22" x2="32" y2="22" stroke="var(--lav-300)" stroke-width="3"/>
+            <line x1="8" y1="32" x2="24" y2="32" stroke="var(--lav-300)" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="badge-chip" style="width:56px;height:56px; top:6px; left:18px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--purple-700)" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5A8.5 8.5 0 0 1 20.5 12H12z" fill="var(--purple-500)" stroke="none"/></svg>
+        </div>
+        <div class="badge-chip" style="width:64px;height:64px; top:0; right:6px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--purple-700)" stroke-width="1.6"><rect x="3" y="10" width="18" height="4" rx="2"/><circle cx="7" cy="12" r="4" fill="none"/><path d="M9 3l3 4 3-4"/></svg>
+        </div>
+        <div class="badge-chip" style="width:70px;height:56px; bottom:44px; right:-14px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--purple-700)" stroke-width="1.8"><path d="M3 18 9 11l4 4 8-9"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="logo-row">
+        <span>Northwind</span><span>Vertex Labs</span><span>Fieldstone</span><span>Corvus</span><span>Halcyon</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-left">
+        <span class="eyebrow">About</span>
+        <h2>Automate workflows with <em style="font-style:italic; color:var(--purple-700);">smart</em> agents</h2>
+      </div>
+      <div class="about-right">
+        <p>TIDES was born from a simple belief: repetitive digital tasks shouldn't hold back human creativity. Built by engineers and productivity experts, TIDES uses AI agents to automate operational flows — helping teams move faster, make smarter decisions, and focus on work that truly matters.</p>
+        <div class="stat">
+          <div><strong>2.7K+</strong><span>Teams onboarded</span></div>
+          <div><strong>98%</strong><span>Transcription accuracy</span></div>
+          <div><strong>40hrs</strong><span>Saved per month</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Features</span>
+        <h2>From words to <em style="font-style:italic; color:var(--purple-700);">workflows</em></h2>
+        <p>Automatically convert conversations into tasks, leads, tickets, or follow-ups — no manual input needed.</p>
+      </div>
+      <div class="card-row">
+        <div class="feat-card">
+          <h3>Real-Time Capture</h3>
+          <p>AI listens during meetings or calls and transcribes spoken dialogue instantly and accurately.</p>
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21M9 21h6"/></svg></div>
+        </div>
+        <div class="feat-card">
+          <h3>Intelligent Summary</h3>
+          <p>Automatically creates concise summaries with key points, decisions, and action items after each session.</p>
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12.5h6M9 15.5h6M9 9.5h3"/></svg></div>
+        </div>
+        <div class="feat-card">
+          <h3>Seamless App Integration</h3>
+          <p>Automatically syncs results to tools like Notion, Slack, Trello, or Google Drive with zero manual input.</p>
+          <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9.5 14.5 14.5 9.5"/><path d="M8 15.5 5.6 17.9a3 3 0 1 1-4.2-4.2L3.8 11.3"/><path d="M16 8.7l2.4-2.4a3 3 0 1 1 4.2 4.2L20.2 13"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="how-left">
+        <span class="eyebrow">How it works</span>
+        <h2>From talk to <em style="font-style:italic; color:var(--purple-700);">task</em> in seconds</h2>
+      </div>
+      <div class="how-right">
+        <p>TIDES agent captures, understands, and organizes your conversations automatically. Here's how it works in four simple steps.</p>
+        <div class="step">
+          <div class="step-num">01</div>
+          <div><h3>Join the conversation</h3><p>The AI agent connects to your meeting, call, or workspace to listen in real time.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div><h3>Capture & transcribe</h3><p>It transcribes every word with high accuracy, tagging speakers and recognizing key phrases.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div><h3>Summarize & extract</h3><p>Using natural language understanding, it generates clear summaries, highlights decisions, and detects action items.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div><h3>Save & sync</h3><p>Everything is organized and synced automatically to the tools your team already uses.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dash" id="dashboard">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Dashboard</span>
+        <h2>Your agency numbers, <em style="font-style:italic; color:var(--purple-700);">live</em></h2>
+        <p>Revenue, customers and live market prices in one view, refreshed automatically.</p>
+      </div>
+      <div class="dash-shell">
+        <div class="dash-top">
+          <label class="dash-account">Account-
+            <select aria-label="Switch account"><option>TIDES Agency</option><option>Northwind</option><option>Vertex Labs</option></select>
+          </label>
+          <div class="dash-tools"><span class="dash-btn">3</span><span class="dash-btn">?</span><span class="dash-avatar">A</span></div>
+        </div>
+        <div class="dash-title"><h3>Agency Dashboard</h3><span class="dash-chip">Overview</span></div>
+        <div class="kpis">
+          <div class="kpi"><span class="kpi-ico">$</span><div><p>Revenue Last Month</p><strong>$<span data-to="39.98" data-dec="2">0</span><small>k</small></strong></div></div>
+          <div class="kpi hl"><span class="kpi-ico">↻</span><div><p>Monthly Recurring Revenue</p><strong>$<span data-to="34.21" data-dec="2">0</span><small>k</small></strong></div></div>
+          <div class="kpi"><span class="kpi-ico">◎</span><div><p>Customers in Stripe</p><strong><span data-to="2533">0</span></strong></div></div>
+          <div class="kpi"><span class="kpi-ico">+</span><div><p>New Customers this Month</p><strong><span data-to="24">0</span></strong></div></div>
+        </div>
+        <div class="dash-grid">
+          <div class="panel">
+            <h4>Revenue Distribution</h4>
+            <div class="dist">
+              <div class="chart-box donut"><canvas id="donutChart" aria-label="Revenue distribution"></canvas></div>
+              <ul class="legend" id="donutLegend"></ul>
+            </div>
+          </div>
+          <div class="panel">
+            <h4>Growth in Last 6 Months</h4>
+            <div class="chart-box"><canvas id="growthChart" aria-label="Customer and MRR growth"></canvas></div>
+          </div>
+        </div>
+        <div class="panel live-panel">
+          <div class="live-head">
+            <div><h4>Live Market</h4><span class="live-status" id="liveStatus">Connecting…</span></div>
+            <div class="live-now"><select id="liveSymbol" aria-label="Choose symbol"></select><strong id="livePrice">–</strong><span id="liveChange" class="chg">–</span></div>
+          </div>
+          <div class="chart-box tall"><canvas id="liveChart" aria-label="Live price chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Plans</span>
+        <h2>Flexible plans, <em style="font-style:italic; color:var(--purple-700);">powerful automation</em></h2>
+        <p>Whether you're a solo user or scaling team, TIDES offers pricing that grows with you — no hidden fees, just AI that delivers.</p>
+      </div>
+      <div class="price-row">
+        <div class="price-card">
+          <div class="plan-name">ECHO LITE</div>                                                                                                                                     
+          <div class="price">Free</div>
+          <p>Perfect for individuals exploring AI meeting tools on a budget.</p>
+          <a href="#" class="btn btn-outline">Get package</a>
+        </div>
+        <div class="price-card featured">
+          <div class="plan-name">INSIGHT</div>
+          <div class="price">$19<span>/month</span></div>
+          <p>Ideal for freelancers needing quick meeting summaries.</p>
+          <a href="#" class="btn btn-primary">Get package</a>
+        </div>
+        <div class="price-card">
+          <div class="plan-name">CLARITY</div>
+          <div class="price">$49<span>/month</span></div>
+          <p>Designed for small teams needing full documentation.</p>
+          <a href="#" class="btn btn-outline">Get package</a>
+        </div>
+        <div class="price-card">
+          <div class="plan-name">MOMENTUM</div>
+          <div class="price">$99<span>/month</span></div>
+          <p>Great for large teams needing full meeting intelligence.</p>
+          <a href="#" class="btn btn-outline">Get package</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles" id="values">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Our values</span>
+        <h2>Built on <em style="font-style:italic; color:var(--purple-700);">principles</em></h2>
+        <p>At TIDES, our values guide every decision — shaping how we build, automate, and support the future of work.</p>
+      </div>
+      <div class="principle-showcase">
+        <div class="principle-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 17 9 11l4 4 8-9"/><path d="M15 6h6v6"/></svg></div>
+        <div class="principle-list">
+          <div class="p-item">
+            <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 11 3 15l3 3M17 11l4 4-4 4"/><path d="M10 21 14 3"/></svg></div>
+            <div><h3>Human automation</h3><p>We design AI agents to support people, not replace them — enabling better focus and creativity.</p></div>
+          </div>
+          <div class="p-item">
+            <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div>
+            <div><h3>Continuous learning</h3><p>TIDES agents evolve with usage, learning from data to deliver smarter, faster results over time.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="value-row">
+        <div class="value-card">
+          <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2.5 20c.8-3.3 3-5 5.5-5s4.7 1.7 5.5 5M12.5 20c.7-3 2.7-4.7 4.9-4.7s4.2 1.7 4.9 4.7"/></svg></div>
+          <h3>Collaboration first</h3>
+          <p>We believe automation should enhance teamwork — enabling seamless handoffs and aligned action.</p>
+        </div>
+        <div class="value-card">
+          <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 14.5 8.5 20.5 9.3 16 13.3 17.2 19.2 12 16.2 6.8 19.2 8 13.3 3.5 9.3 9.5 8.5z"/></svg></div>
+          <h3>Simplicity by design</h3>
+          <p>Our tools are intuitive, accessible, and built to reduce friction in everyday workflows.</p>
+        </div>
+        <div class="value-card">
+          <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 5 6v5.5c0 4.6 3 7.7 7 9.5 4-1.8 7-4.9 7-9.5V6z"/><path d="M9.3 12 11.3 14 15 10"/></svg></div>
+          <h3>Trust & transparency</h3>
+          <p>We prioritize privacy, explainability, and control so users know how and why things work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Answers that keep <em style="font-style:italic; color:var(--purple-700);">you flowing</em></h2>
+        <p>From capturing conversations to syncing with your tools, find quick answers to how TIDES works.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item open">
+          <div class="faq-q"><h4>How does TIDES capture conversations?</h4><span class="faq-toggle">↑</span></div>
+          <div class="faq-a">TIDES connects to your meetings or calls in real time and accurately transcribes spoken dialogue using AI.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><h4>Are the meeting summaries generated automatically?</h4><span class="faq-toggle">↓</span></div>
+          <div class="faq-a">Yes. Once a session ends, TIDES automatically generates a concise summary with key points, decisions, and action items.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><h4>Where are my notes stored and organized?</h4><span class="faq-toggle">↓</span></div>
+          <div class="faq-a">All notes are securely stored in your workspace and automatically organized by project, date, and participants.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><h4>Can TIDES sync with tools I already use?</h4><span class="faq-toggle">↓</span></div>
+          <div class="faq-a">Absolutely — TIDES syncs results to tools like Notion, Slack, Trello, and Google Drive with zero manual input.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><h4>Is there a free plan available?</h4><span class="faq-toggle">↓</span></div>
+          <div class="faq-a">Yes, Echo Lite is our free plan, perfect for individuals exploring AI meeting tools on a budget.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section style="padding:0 0 110px;">
+    <div class="cta-band">
+      <span class="eyebrow">Get started</span>
+      <h2>Ready to turn your conversations into action?</h2>
+      <a href="#pricing" class="btn btn-primary">Start your free trial <span class="btn-pill-icon">↗</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo"><span class="logo-mark"></span>TIDES</div>
+        <p>Turning every conversation into data-driven decisions with intelligent automation that listens, learns, and responds.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Company</h5>
+          <ul><li><a href="#about">About</a></li><li><a href="#values">Values</a></li><li><a href="#">Careers</a></li></ul>
+        </div>
+        <div class="foot-col">
+          <h5>Product</h5>
+          <ul><li><a href="#features">Features</a></li><li><a href="#how">How it works</a></li><li><a href="#pricing">Pricing</a></li></ul>
+        </div>
+        <div class="foot-col">
+          <h5>Support</h5>
+          <ul><li><a href="#faq">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TIDES. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.8v.01M12 16.5v-3.7c0-1.4 1-2.3 2.2-2.3 1.3 0 2 .9 2 2.3v3.7"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="./script.js"></script>
+<script src="./dashboard.js"></script>
+<script src="./tides3d.js"></script>
+<script type="module" src="./tides-webgl.js"></script>
+
+</body>
+</html>
